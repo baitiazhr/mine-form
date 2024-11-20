@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Boyfriend Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+            color: #444;
+        }
+        form {
+            margin-top: 20px;
+            display: inline-block;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #noButton {
+            background-color: #dc3545;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Be My Boyfriend? ❤️</h1>
+    <form id="boyfriendForm">
+        <label for="nama">Nama kamu siapa?</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="tipe">Kamu tipe orangnya gimana?</label>
+        <input type="text" id="tipe" name="tipe" required>
+
+        <label for="yakin">Yakin mau jadi pacar aku?</label>
+        <select id="yakin" name="yakin" required>
+            <option value="Yakin banget">Yakin banget</option>
+            <option value="Yakin aja">Yakin aja</option>
+        </select>
+
+        <label for="seberapaYakin">Seberapa yakin kamu? (1-10)</label>
+        <input type="number" id="seberapaYakin" name="seberapaYakin" min="1" max="10" required>
+
+        <label for="tipeCewe">Tipe cewe kamu kayak gimana?</label>
+        <input type="text" id="tipeCewe" name="tipeCewe" required>
+
+        <label for="harapan">Adakah harapan yang ingin kamu sampaikan ke si cantik? (aku dong! 😘)</label>
+        <textarea id="harapan" name="harapan" rows="4" required></textarea>
+
+        <label for="tanggal">Kapan kira-kira kita bisa first date? (kiw kiw)</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+
+        <button type="submit" id="submitButton">Submit</button>
+        <button type="button" id="noButton">No</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('boyfriendForm');
+        const noButton = document.getElementById('noButton');
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * window.innerWidth * 0.8;
+            const y = Math.random() * window.innerHeight * 0.8;
+            noButton.style.position = 'absolute';
+            noButton.style.left = x + 'px';
+            noButton.style.top = y + 'px';
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            await fetch('<https://script.google.com/macros/s/AKfycbwF_m3d21TF7ZtFexX9S895YgEbaiCs5d47t45M2DdE8RoqKKS-45F4hZU8OCK_r-jV/exec>', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: { 'Content-Type': 'application/json' },
+            });
+
+            alert("Jawabanmu berhasil disimpan! 😊");
+            form.reset();
+        });
+    </script>
+</body>
+</html>
