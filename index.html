@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's Get to Know Each Other!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Question 1 -->
+    <div id="question-1" class="question active">
+      <h1>What's your name? 👀</h1>
+      <input type="text" id="name" placeholder="Enter your name">
+      <button onclick="nextQuestion(2)">Next</button>
+    </div>
+    <!-- Question 2 -->
+    <div id="question-2" class="question">
+      <h1>Describe yourself 😎</h1>
+      <textarea id="description" placeholder="For example: tall, funny, handsome, etc."></textarea>
+      <button onclick="nextQuestion(3)">Next</button>
+    </div>
+    <!-- Question 3 -->
+    <div id="question-3" class="question">
+      <h1>What is your ideal type of girl? 😍</h1>
+      <textarea id="idealType" placeholder="For example: smart, caring, etc."></textarea>
+      <button onclick="nextQuestion(4)">Next</button>
+    </div>
+    <!-- Question 4 -->
+    <div id="question-4" class="question">
+      <h1>Are you ready to be my support system? 🤝</h1>
+      <button onclick="nextQuestion(5)">I’m ready for you!</button>
+      <button onclick="showResponse('Not ready 😢')">Not yet...</button>
+    </div>
+    <!-- Question 5 -->
+    <div id="question-5" class="question">
+      <h1>Rate your readiness from 1-10 💪</h1>
+      <input type="number" id="rate" min="1" max="10" placeholder="1-10">
+      <button onclick="nextQuestion(6)">Next</button>
+    </div>
+    <!-- Question 6 -->
+    <div id="question-6" class="question">
+      <h1>What message would you like to tell this pretty girl? ✨</h1>
+      <textarea id="hope" placeholder="I hope we can always be happy..."></textarea>
+      <button onclick="showSummary()">Submit</button>
+    </div>
+    <!-- Summary -->
+    <div id="summary" class="question">
+      <h1>Your Answers 💌</h1>
+      <p id="summary-text"></p>
+      <button onclick="restart()">Start Over</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
