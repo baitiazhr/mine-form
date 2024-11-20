@@ -1,0 +1,122 @@
+/* Reset margin dan padding untuk seluruh elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #F9C2D8;  /* Warna pink pastel background */
+    font-family: 'Poppins', sans-serif;  /* Font yang lucu dan ringan */
+    color: #6A4C9C;  /* Warna teks ungu pastel */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header h1 {
+    color: #FF69B4;  /* Pink cerah untuk judul */
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: 'Lobster', cursive;  /* Font dekoratif dan playful */
+  }
+  
+  .question {
+    display: none;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Background putih transparan */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question.active {
+    display: block;
+  }
+  
+  input[type="text"], input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    border: 2px solid #FF69B4;  /* Border pink cerah */
+    border-radius: 15px;  /* Border melengkung */
+    background-color: #FFE6F1;  /* Background input pink pastel */
+    color: #6A4C9C;  /* Warna teks input ungu pastel */
+  }
+  
+  button {
+    padding: 12px 30px;
+    background-color: #FF69B4;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #FF3385;  /* Warna pink lebih gelap saat hover */
+  }
+  
+  #mario {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 10;
+  }
+  
+  .mario-animation {
+    animation: moveMario 5s infinite linear;
+  }
+  
+  @keyframes moveMario {
+    0% { left: -150px; }
+    50% { left: 50%; }
+    100% { left: 100vw; }
+  }
+  
+  #summary {
+    display: none;
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.8);  /* Background untuk summary */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #summary.active {
+    display: block;
+  }
+  
+  h3 {
+    font-size: 2em;
+    font-family: 'Lobster', cursive;  /* Font dekoratif untuk heading */
+    color: #FF69B4;
+  }
+  
+  input[type="text"]:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: #FF3385;  /* Border berubah jadi pink gelap saat fokus */
+    background-color: #FFF0F5;  /* Background berubah jadi lebih cerah */
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  footer {
+    font-size: 0.8em;
+    color: #6A4C9C;
+    margin-top: 30px;
+  }  
